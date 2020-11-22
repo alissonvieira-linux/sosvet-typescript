@@ -42,7 +42,8 @@ class OrgController {
 
     const org = await connection('orgs')
     .select('id', 'name', 'type', 'email', 'phone', 'cep', 'latitude', 'longitude')
-    .where('id', id);
+    .where('id', id)
+    .first();
 
     return res.json(org);
   }
